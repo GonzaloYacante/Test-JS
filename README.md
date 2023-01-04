@@ -227,32 +227,23 @@ let deudas = 1250;
 - Mi solución
 
   ```jsx
-  let opciones = ["Free", "Basic", "Expert", "ExpertPlus"];
+  const tiposDeSuscripciones = {
+    free: "Solo puedes tomar los cursos gratis",
+    basic: "Puedes tomar casi todos los cursos de Platzi durante un mes",
+    expert: "Puedes tomar casi todos los cursos de Platzi durante un año",
+    expertduo:
+      "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año",
+  };
 
-  function tipoDeSuscripcionPunto3(suscripcionElegidaPunto3) {
-    if (suscripcionElegidaPunto3 == "Free") {
-      console.log("Solo puedes tomar los cursos gratis.");
+  function conseguirTipoSuscripcion(suscripcion) {
+    if (tiposDeSuscripciones[suscripcion]) {
+      console.log(tiposDeSuscripciones[suscripcion]);
+      return;
     }
-    if (suscripcionElegidaPunto3 == "Basic") {
-      console.log(
-        "Puedes tomar casi todos los cursos de Platzi durante un mes."
-      );
-    }
-    if (suscripcionElegidaPunto3 == "Expert") {
-      console.log(
-        "Puedes tomar casi todos los cursos de Platzi durante un año."
-      );
-    }
-    if (suscripcionElegidaPunto3 == "ExpertPlus") {
-      console.log(
-        "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año."
-      );
-    } else {
-      console.log("No tienes ninguna suscripción");
-    }
+    console.warn("Ese tipo de suscripción no existe");
   }
 
-  tipoDeSuscripcionPunto3(opciones[3]);
+  conseguirTipoSuscripcion("free");
   ```
 
 ## Ciclos
